@@ -126,9 +126,18 @@ exception_pays <- list(
   "Northern Cyprus"                   = "North Cyprus",
   "Democratic Republic of the Congo"  = "Congo (Kinshasa)" ,
   "Republic of Congo"                 = "Congo (Brazzaville)",
-  "Somaliland"                        = "Somaliland Region"
+  "Somaliland"                        = "Somaliland Region",
+  "Somaliland"                        = "Somaliland region"
 )
 # "Hong Kong"  & "Palestinian Territories"
+
+lapply(1:length(exception_pays), function(x){
+  wh_2015 <- wh_2015[country == exception_pays[[x]], country := names(exception_pays)[x]]
+  wh_2016 <- wh_2016[country == exception_pays[[x]], country := names(exception_pays)[x]]
+  wh_2017 <- wh_2017[country == exception_pays[[x]], country := names(exception_pays)[x]]
+})
+
+
 
 # 5 - Sauvegarde des tables -----------------------------------------------
 
