@@ -2,7 +2,7 @@
 
 
 # 0 - Chargement des packages ---------------------------------------------
-
+if(!require(data.table)) install.packages("data.table")
 library(data.table)
 
 
@@ -102,7 +102,35 @@ wh_2017[, c("economy_pct",
                                  dystopia/score)]
 
 
-# 4 - Sauvegarde des tables -----------------------------------------------
+
+# 4 - Jointure avec une carte ---------------------------------------------
+mapdata <- get_data_from_map(download_map_data("custom/world-robinson-highres"))
+str(mapdata)
+mapdata <- as.data.table(mapdata)
+
+
+pays_manquants_2015 <-
+  wh_2015[!which(wh_2015$country %in% mapdata$name)]$country # 9 manquants
+pays_manquants_2016 <-
+  wh_2016[!which(wh_2016$country %in% mapdata$name)]$country # 9 manquants
+pays_manquants_2017 <-
+  wh_2017[!which(wh_2017$country %in% mapdata$name)]$country # 9 manquants
+
+
+# Recherche avec mapdata$name[grepl(nom_pays, mapdata$name)]
+exception_pays <- list(
+  "United States of America"          = "United States",
+  "Republic of Serbia"                = "Serbia",
+  "United Republic of Tanzania"       = "Tanzania",
+  "Taiwan"                            = "Taiwan Province of China",
+  "Northern Cyprus"                   = "North Cyprus",
+  "Democratic Republic of the Congo"  = "Congo (Kinshasa)" ,
+  "Republic of Congo"                 = "Congo (Brazzaville)",
+  "Somaliland"                        = "Somaliland Region"
+)
+# "Hong Kong"  & "Palestinian Territories"
+
+# 5 - Sauvegarde des tables -----------------------------------------------
 
 saveRDS(wh_2015, "data/wh_2015.RDS")
 saveRDS(wh_2015, "data/wh_2016.RDS")
