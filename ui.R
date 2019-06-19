@@ -10,7 +10,8 @@ fluidPage(
       choices = c("2015", "2016", "2017")
     )
   ),
-  fluidRow(column(width = 4),
+  fluidRow(column(width = 4,
+                  textOutput("test")),
            column(width = 7, offset = 1))
 
 )

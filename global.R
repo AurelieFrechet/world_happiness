@@ -14,9 +14,9 @@ library(shinyWidgets)
 
 # 1 - Chargement des donnees ----------------------------------------------
 
-wh_2015 <- readRDS("data/wh_2015.RDS")
-wh_2016 <- readRDS("data/wh_2016.RDS")
-wh_2017 <- readRDS("data/wh_2017.RDS")
+wh_2015 <- readRDS("data/wh_2015.RDS") %>% as.data.table()
+wh_2016 <- readRDS("data/wh_2016.RDS") %>% as.data.table()
+wh_2017 <- readRDS("data/wh_2017.RDS") %>% as.data.table()
 
 # 2 - Chargement de la carte ----------------------------------------------
 
