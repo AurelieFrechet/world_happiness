@@ -2,15 +2,11 @@
 
 
 # 0 - Chargementdes packages ----------------------------------------------
-if(!require(maps))        install.packages("maps")
-if(!require(mapdata))     install.packages("mapdata")
-if(!require(dplyr))       install.packages("dplyr")
-if(!require(highcharter)) install.packages("highcharter")
-if(!require(shinyWidgets)) install.packages("shinyWidgets")
 
 library(dplyr)
 library(highcharter)
 library(shinyWidgets)
+library(data.table)
 
 # 1 - Chargement des donnees ----------------------------------------------
 
