@@ -2,7 +2,8 @@
 
 
 # 0 - Chargementdes packages ----------------------------------------------
-
+library(shiny)
+library(shinydashboard)
 library(dplyr)
 library(highcharter)
 library(shinyWidgets)
