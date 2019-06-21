@@ -21,9 +21,7 @@ function(input, output, session) {
       name = "Test",
       dataLabels = list(enabled = TRUE, format = "{point.name}"),
       borderColor = "#FAFAFA",
-      borderWidth = 0.1,
-      width    = "100%",
-      height   = "100%"
+      borderWidth = 0.1
     )
   )
   

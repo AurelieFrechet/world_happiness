@@ -15,15 +15,19 @@ dashboardPage(
       selected = "2015"
     )
   ),
-  dashboardBody(tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "www/css/custom.css")
-  ),
+  dashboardBody(
+    tags$style(
+      type = "text/css",
+      "#carte{
+          width : 100%;
+          height : calc(100vh - 80px) !important;
+      }"
+),
+
   tabItems(tabItem(
     "carte_monde",
       highchartOutput(
-        outputId = "carte",
-        width    = "100%",
-        height   = "100%"
+        outputId = "carte"
     )
   )))
 )
