@@ -1,5 +1,19 @@
 function(input, output, session) {
   # Initialisation reactives values -------------------------------------------
+  chosen_value <- reactive({
+    switch(
+      input$indicateur,
+      "Score"      = "score", 
+      "Rank"       = "rank", 
+      "Economy"    = "economy", 
+      "Family"     = "family", 
+      "Health"     = "health", 
+      "Freedom"    = "freedom", 
+      "Trust"      = "trust", 
+      "Generosity" = "generosity", 
+      "Dystopia"   = "dystopia"
+    )
+  })
   
   wh_data  <- reactive({
     switch(
@@ -16,7 +30,7 @@ function(input, output, session) {
     hcmap(
       "custom/world-robinson-highres",
       data        = wh_data(),
-      value       = "score",
+      value       = chosen_value(),
       joinBy      = c("name", "country"),
       name        = "Score",
       borderColor = "#FAFAFA",
