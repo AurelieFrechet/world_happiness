@@ -17,4 +17,3 @@ wh_2017 <- readRDS("data/wh_2017.RDS") %>% as.data.table()
 
 # 2 - Chargement de la carte ----------------------------------------------
 
-

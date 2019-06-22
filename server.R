@@ -15,15 +15,25 @@ function(input, output, session) {
   output$carte <- renderHighchart(
     hcmap(
       "custom/world-robinson-highres",
-      data =   wh_data(),
-      value = "score",
-      joinBy = c("name", "country"),
-      name = "Test",
-      dataLabels = list(enabled = TRUE, format = "{point.name}"),
+      data        = wh_data(),
+      value       = "score",
+      joinBy      = c("name", "country"),
+      name        = "Score",
       borderColor = "#FAFAFA",
       borderWidth = 0.1
-    )
+    ) %>% 
+      hc_colorAxis(
+        minColor = "#fffcdf", 
+        maxColor = "#ffe700"
+      ) %>%
+      hc_chart(backgroundColor = "#303030")
   )
+  
+  
+
+# Compareur Pays 2 à 2 ----------------------------------------------------
+
+  
   
   output$test <- renderPrint(head(wh_data()))
   output$test2 <- renderPrint(class(input$year))
