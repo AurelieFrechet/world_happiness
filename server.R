@@ -6,13 +6,13 @@ function(input, output, session) {
       input$indicateur,
       "Score"      = "score", 
       "Rank"       = "rank", 
-      "Economy"    = "economy", 
-      "Family"     = "family", 
-      "Health"     = "health", 
-      "Freedom"    = "freedom", 
-      "Trust"      = "trust", 
-      "Generosity" = "generosity", 
-      "Dystopia"   = "dystopia"
+      "Economy"    = "economy_pct", 
+      "Family"     = "family_pct", 
+      "Health"     = "health_pct", 
+      "Freedom"    = "freedom_pct", 
+      "Trust"      = "trust_pct", 
+      "Generosity" = "generosity_pct", 
+      "Dystopia"   = "dystopia_pct"
     )
   })
   
@@ -39,7 +39,7 @@ function(input, output, session) {
     ) %>% 
       hc_colorAxis(
         minColor = "#ffffff", 
-        maxColor = "#ffe700"
+        maxColor = colors_wh[[chosen_value()]]
       ) %>%
       hc_chart(backgroundColor = "#303030")
   )
@@ -85,6 +85,7 @@ function(input, output, session) {
         }"
         )
       )%>%
+      hc_colors(as.vector(unlist(colors_wh)))  %>%
       hc_plotOptions(
         pie = list(dataLabels = 
                      list(distance = -50))
