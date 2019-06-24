@@ -3,7 +3,14 @@
 
 # 0 - Chargement des packages ---------------------------------------------
 if(!require(data.table)) install.packages("data.table")
+if(!require(maps))        install.packages("maps")
+if(!require(mapdata))     install.packages("mapdata")
+if(!require(dplyr))       install.packages("dplyr")
+if(!require(highcharter)) install.packages("highcharter")
+
 library(data.table)
+library(dplyr)
+library(highcharter)
 
 
 # 1 - Chargement des données ----------------------------------------------
