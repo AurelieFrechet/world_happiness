@@ -8,12 +8,21 @@ library(dplyr)
 library(highcharter)
 library(shinyWidgets)
 library(data.table)
+library(stringr)
 
 # 1 - Chargement des donnees ----------------------------------------------
 
-wh_2015 <- readRDS("data/wh_2015.RDS") %>% as.data.table()
-wh_2016 <- readRDS("data/wh_2016.RDS") %>% as.data.table()
-wh_2017 <- readRDS("data/wh_2017.RDS") %>% as.data.table()
+files_data <- list.files(file.path(getwd(), "data"))
+for (f in files_data){
+  assign(x = paste("wh", str_replace(f, pattern = "(\\w+).csv", replace = "\\1"), sep = "_"),
+         value = fread(file.path(getwd(), "data", f)))
+}
+
+# wh_2015 <- readRDS("data/wh_2015.RDS") %>% as.data.table()
+# wh_2016 <- readRDS("data/wh_2016.RDS") %>% as.data.table()
+# wh_2017 <- readRDS("data/wh_2017.RDS") %>% as.data.table()
+
+
 
 
 # 2 - Couleurs ------------------------------------------------------------
