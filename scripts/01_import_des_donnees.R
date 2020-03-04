@@ -42,19 +42,24 @@ for (f in files_data) {
 
 
 
-# 2 - Jointure avec une carte ---------------------------------------------
+# Mise en une seule table -------------------------------------------------
+
+wh_data <- rbindlist(list(wh_2015[, year := 2015],
+                          wh_2016[, year := 2016],
+                          wh_2017[, year := 2017],
+                          wh_2018[, year := 2018],
+                          wh_2019[, year := 2019]))
+
+
+# 3 - Jointure avec une carte ---------------------------------------------
 mapdata <-
   get_data_from_map(download_map_data("custom/world-robinson-highres"))
 str(mapdata)
 mapdata <- as.data.table(mapdata)
 
 
-pays_manquants_2015 <-
-  wh_2015[!which(wh_2015$country %in% mapdata$name)]$country # 9 manquants
-pays_manquants_2016 <-
-  wh_2016[!which(wh_2016$country %in% mapdata$name)]$country # 9 manquants
-pays_manquants_2017 <-
-  wh_2017[!which(wh_2017$country %in% mapdata$name)]$country # 9 manquants
+pays_manquants<-
+  unique(wh_data[!which(wh_data$country %in% mapdata$name)]$country)
 
 
 # Recherche avec mapdata$name[grepl(nom_pays, mapdata$name)]
@@ -69,21 +74,20 @@ exception_pays <- list(
   "Somaliland"                        = "Somaliland Region",
   "Somaliland"                        = "Somaliland region"
 )
-# "Hong Kong"  & "Palestinian Territories"
+# "Hong Kong"  & "Palestinian Territories" & North Macedonia
 
 lapply(1:length(exception_pays), function(x) {
-  wh_2015 <-
-    wh_2015[country == exception_pays[[x]], country := names(exception_pays)[x]]
-  wh_2016 <-
-    wh_2016[country == exception_pays[[x]], country := names(exception_pays)[x]]
-  wh_2017 <-
-    wh_2017[country == exception_pays[[x]], country := names(exception_pays)[x]]
+  wh_data <-
+    wh_data[country == exception_pays[[x]], country := names(exception_pays)[x]]
 })
 
 
 
-# 3 - Sauvegarde des tables -----------------------------------------------
+# 4 - Sauvegarde des tables -----------------------------------------------
 
-saveRDS(wh_2015, "data/wh_2015.RDS")
-saveRDS(wh_2015, "data/wh_2016.RDS")
-saveRDS(wh_2015, "data/wh_2017.RDS")
+# saveRDS(wh_2015, "data/wh_2015.RDS")
+# saveRDS(wh_2016, "data/wh_2016.RDS")
+# saveRDS(wh_2017, "data/wh_2017.RDS")
+
+saveRDS(wh_data, "data/wh_data.RDS")
+
