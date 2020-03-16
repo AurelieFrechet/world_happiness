@@ -50,6 +50,12 @@ wh_data <- rbindlist(list(wh_2015[, year := 2015],
                           wh_2018[, year := 2018],
                           wh_2019[, year := 2019]))
 
+countries <- fread(file = file.path("data", "2015.csv"))[, .(Country, Region)]
+colnames(countries) <- tolower(colnames(countries))
+
+wh_data <- merge(x = wh_data,
+                 y = countries)
+
 
 # 3 - Jointure avec une carte ---------------------------------------------
 mapdata <-

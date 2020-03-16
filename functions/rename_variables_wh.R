@@ -33,7 +33,8 @@ rename_variables_wh <- function(wh_data){
   # Restriction aux variables concernées
   colnames(wh_data) <- c_names
   data <- data.frame(country = wh_data$country,
-                sapply(wh_data[, .(rank, score, economy, family, health, freedom, generosity, trust)], as.numeric)) %>% 
+                sapply(wh_data[, .(rank, score, economy, family, health, freedom, generosity, trust)], as.numeric),
+                stringsAsFactors = FALSE) %>% 
     as.data.table()
   
   # dystopia value
