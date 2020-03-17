@@ -11,6 +11,8 @@ library(shinyWidgets)
 library(data.table)
 library(stringr)
 library(plotly)
+library(tidyverse)
+library(glue)
 
 # 1 - Chargement des donnees ----------------------------------------------
 
