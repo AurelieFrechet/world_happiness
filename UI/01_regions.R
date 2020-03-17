@@ -9,26 +9,9 @@ body_content[[length(body_content) + 1]] <-
               title = "Pick a region")
           ),
           fluidRow(
-            # A static infoBox
-            valueBox(
-              subtitle = "1st Rank",
-              value = 12,
-              icon = icon("medal"),
-              color = "yellow"
-            ),
-            # Dynamic infoBoxes
-            valueBox(
-              subtitle = "1st Score",
-              value = 7.84,
-              icon = icon("star-half-alt"),
-              color = "blue"
-            ),
-            valueBox(
-              subtitle = "Mean Score",
-              value = 6.32,
-              icon = icon("globe-europe"),
-              color = "navy"
-            )
+            valueBoxOutput("region_1st_rank"),
+            valueBoxOutput("region_1st_score"),
+            valueBoxOutput("region_mean_score")
           ),
           br(),
           column(width = 6,

@@ -6,29 +6,13 @@ body_content[[length(body_content) + 1]] <-
             choices = countries_list,
             width = "100%",
             options = list(
-              title = "Pick a country")
+              title = "Pick a country",
+              `live-search` = TRUE)
           ),
           fluidRow(
-            # A static infoBox
-            valueBox(
-              subtitle = "1st Rank",
-              value = 12,
-              icon = icon("medal"),
-              color = "yellow"
-            ),
-            # Dynamic infoBoxes
-            valueBox(
-              subtitle = "1st Score",
-              value = 7.84,
-              icon = icon("star-half-alt"),
-              color = "blue"
-            ),
-            valueBox(
-              subtitle = "Mean Score",
-              value = 6.32,
-              icon = icon("globe-europe"),
-              color = "navy"
-            )
+            valueBoxOutput("country_1st_rank"),
+            valueBoxOutput("country_1st_score"),
+            valueBoxOutput("country_mean_score")
           ),
           br(),
           h3("Evolution of score composition"),
