@@ -1,0 +1,32 @@
+/*
+  $color-economy    : #A9FF96;
+  $color-family     : #FFBC75;
+  $color-health     : #999EFF;
+  $color-freedom    : #FF7599;
+  $color-trust      : #FDEC6D;
+  $color-generosity : #95CEFF;
+  $color-dystopia   : #5C5C61;
+  */
+
+/* colors */
+
+.color-economy{
+  background-color: #A9FF96;
+}
+.color-family{
+  background-color: #FFBC75;
+}
+.color-health{
+  background-color: #999EFF;
+}
+.color-freedom{
+  background-color: #FF7599;
+}
+.color-trust{
+  background-color: #FDEC6D;
+}
+.color-generosity{
+  background-color: #95CEFF;
+}
+
+

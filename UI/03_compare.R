@@ -24,19 +24,8 @@ body_content[[length(body_content) + 1]] <-
   column(width = 6,
          h3("Evolution of indicator by year"),
          plotlyOutput("compare_lines"),
-         radioGroupButtons(
-           inputId = "compare_indicators",
-           label = "Choose an indicator:",
-           choices = c(
-             `<i class='fa fa-hand-holding-usd'></i>`    = "economy", 
-             `<i class='fa fa-child'></i>`               = "family", 
-             `<i class='fa fa-heartbeat'></i>`           = "health", 
-             `<i class='fa fa-dove'></i>`                = "freedom", 
-             `<i class='fa fa-handshake'></i>`           = "trust", 
-             `<i class='fa fa-hand-holding-heart'></i>`  = "generosity"
-           ),
-           justified = TRUE
-         ))
+         switchbuttons_indicator(
+           inputId = "compare_indicators"))
   
   
   
