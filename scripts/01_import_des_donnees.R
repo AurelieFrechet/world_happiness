@@ -87,6 +87,10 @@ lapply(1:length(exception_pays), function(x) {
     wh_data[country == exception_pays[[x]], country := names(exception_pays)[x]]
 })
 
+# jointure code
+wh_data <-
+  wh_data %>% left_join(mapdata, 
+                        by = c("country"="name"))
 
 
 # 4 - Sauvegarde des tables -----------------------------------------------

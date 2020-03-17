@@ -29,7 +29,6 @@ lines_wh <- function(data, indicator) {
     ),
     margin = list(autoexpand = FALSE,
                   r = 100),
-    autosize = FALSE,
     showlegend = FALSE
   )")
  eval(parse(text = cmd))

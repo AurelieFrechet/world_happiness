@@ -1,6 +1,13 @@
 body_content[[length(body_content) + 1]] <-
   tabItem("region",
-          h1("Region"),
+          pickerInput(
+            inputId = "region_select",
+            label = "", 
+            choices = regions,
+            width = "100%",
+            options = list(
+              title = "Pick a region")
+          ),
           fluidRow(
             # A static infoBox
             valueBox(
@@ -26,6 +33,7 @@ body_content[[length(body_content) + 1]] <-
           br(),
           column(width = 6,
                  h3("Composition of score order by indicator"),
+                 plotlyOutput("region_stakedbar"),
                  sliderTextInput(
                    inputId = "region_years",
                    label = "Pick a year:",
@@ -34,6 +42,7 @@ body_content[[length(body_content) + 1]] <-
                  )),
           column(width = 6,
                  h3("Evolution of indicator by year"),
+                 plotlyOutput("region_lines"),
                  radioGroupButtons(
                    inputId = "region_indicators",
                    label = "Choose an indicator:",

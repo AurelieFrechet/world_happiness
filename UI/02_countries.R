@@ -1,6 +1,13 @@
 body_content[[length(body_content) + 1]] <-
   tabItem("country",
-          h1("Country"),
+          pickerInput(
+            inputId = "country_select",
+            label = "", 
+            choices = countries_list,
+            width = "100%",
+            options = list(
+              title = "Pick a country")
+          ),
           fluidRow(
             # A static infoBox
             valueBox(
@@ -24,5 +31,6 @@ body_content[[length(body_content) + 1]] <-
             )
           ),
           br(),
-          h3("Evolution of score composition")
+          h3("Evolution of score composition"),
+          plotlyOutput("country_area")
   )

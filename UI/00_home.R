@@ -48,12 +48,9 @@ body_content[[length(body_content) + 1]] <-
         width = "100%"
       )
       
-      
-      
     ),
     column(width = 9,
-           highchartOutput("carte"))
-    
-    
+           plotlyOutput("home_map")
+    )
     
   )

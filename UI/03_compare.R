@@ -1,27 +1,31 @@
 body_content[[length(body_content) + 1]] <-
   tabItem(
   "compare",
-  h1("Compare Happiness score between countries of your choice"),
   pickerInput(
-    inputId = "Id082",
-    label = "Options group", 
+    inputId = "compare_select",
+    label = "", 
     choices = countries_list,
     multiple = TRUE,
-    width = "100%"
+    width = "100%",
+    options = list(
+      title = "Select multiple countries",
+      `live-search` = TRUE)
   ),
   br(),
   column(width = 6,
          h3("Composition of score order by indicator"),
+         plotlyOutput("compare_stakedbar"),
          sliderTextInput(
-           inputId = "region_years",
+           inputId = "compare_years",
            label = "Pick a year:",
            choices = years,
            width = "100%"
          )),
   column(width = 6,
          h3("Evolution of indicator by year"),
+         plotlyOutput("compare_lines"),
          radioGroupButtons(
-           inputId = "region_indicators",
+           inputId = "compare_indicators",
            label = "Choose an indicator:",
            choices = c(
              `<i class='fa fa-hand-holding-usd'></i>`    = "economy", 

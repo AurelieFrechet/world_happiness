@@ -1,6 +1,6 @@
 stackedbar_wh <- function(data, year) {
-  data %>%
-    filter(year == year) %>% 
+  eval(parse(text = glue("data %>%
+    filter(year == {year}) "))) %>% 
     plot_ly(
       x = ~ economy,
       y = ~ reorder(country, -rank),
@@ -69,4 +69,4 @@ stackedbar_wh <- function(data, year) {
     )
 }
 
-stackedbar_wh(filter(wh_data, region == "Southern Asia"), 2017)
+

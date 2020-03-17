@@ -14,6 +14,10 @@ library(plotly)
 
 # 1 - Chargement des donnees ----------------------------------------------
 
+files_functions <- list.files("functions/")
+for(f in file.path(getwd(), "functions", files_functions)){
+  source(f, local = TRUE)
+}
 
 wh_data <- readRDS("data/wh_data.RDS")
 
