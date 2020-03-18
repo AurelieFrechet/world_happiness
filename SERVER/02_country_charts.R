@@ -47,7 +47,7 @@ output$country_1st_score <- renderValueBox({
 output$country_mean_score <- renderValueBox({
   valueBox(
     value = round(mean(sub_data_region()$score), 3),
-    subtitle = paste("Mean Score of", current$region),
+    subtitle = paste("Mean Score of", current$mean_region),
     icon = icon("star-half-alt"),
     color = "maroon"
   )

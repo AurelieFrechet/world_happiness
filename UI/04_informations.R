@@ -88,7 +88,7 @@ body_content[[length(body_content) + 1]] <-
             for each country as stated in the previous answer."),
           
           h2("Reports"),
-          p("<a href='https://s3.amazonaws.com/happiness-report/2019/WHR19.pdf'>2019</a>"),
-          p("<a href='https://s3.amazonaws.com/happiness-report/2018/WHR_web.pdf'>2018</a>")
+          p( HTML("<a href='https://s3.amazonaws.com/happiness-report/2019/WHR19.pdf'>2019</a>")),
+          p(HTML("<a href='https://s3.amazonaws.com/happiness-report/2018/WHR_web.pdf'>2018</a>"))
 
           )

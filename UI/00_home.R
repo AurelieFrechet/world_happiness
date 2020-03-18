@@ -25,21 +25,8 @@ body_content[[length(body_content) + 1]] <-
       p("See by yourself"),
       
       
-      radioGroupButtons(
-        inputId = "home_indicators",
-        label = "Choose an indicator:",
-        choices = c(
-          `<i class='fa fa-star'></i>`                = "score", 
-          `<i class='fa fa-sort-amount-up'></i>`      = "rank", 
-          `<i class='fa fa-hand-holding-usd'></i>`    = "economy", 
-          `<i class='fa fa-child'></i>`               = "family", 
-          `<i class='fa fa-heartbeat'></i>`           = "health", 
-          `<i class='fa fa-dove'></i>`                = "freedom", 
-          `<i class='fa fa-handshake'></i>`           = "trust", 
-          `<i class='fa fa-hand-holding-heart'></i>`  = "generosity"
-        ),
-        justified = TRUE
-      ),
+      switchbuttons_indicator(
+        inputId = "home_indicators"),
       
       sliderTextInput(
         inputId = "home_years",
