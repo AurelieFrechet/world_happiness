@@ -16,7 +16,8 @@ body_content[[length(body_content) + 1]] <-
           br(),
           column(width = 6,
                  h3("Composition of score order by indicator"),
-                 plotlyOutput("region_stakedbar"),
+                 plotlyOutput("region_stakedbar",
+                              height = "400px"),
                  sliderTextInput(
                    inputId = "region_years",
                    label = "Pick a year:",

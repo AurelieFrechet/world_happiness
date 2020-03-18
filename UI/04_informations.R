@@ -85,6 +85,10 @@ body_content[[length(body_content) + 1]] <-
             to which these factors contribute in evaluating the happiness in 
             each country. The Dystopia Residual metric actually is the Dystopia 
             Happiness Score(1.85) + the Residual value or the unexplained value 
-            for each country as stated in the previous answer.")
+            for each country as stated in the previous answer."),
+          
+          h2("Reports"),
+          p("<a href='https://s3.amazonaws.com/happiness-report/2019/WHR19.pdf'>2019</a>"),
+          p("<a href='https://s3.amazonaws.com/happiness-report/2018/WHR_web.pdf'>2018</a>")
 
           )

@@ -30,17 +30,17 @@ data %>%
     fillcolor = colors_wh$freedom
   ) %>%
   add_trace(
-    y = ~ trust,
-    hovertemplate  = '%{x} : %{y}',
-    name = 'Trust',
-    fillcolor = colors_wh$trust
-  ) %>%
-  add_trace(
     y = ~ generosity,
     hovertemplate  = '%{x} : %{y}',
     name = 'Generosity',
     fillcolor = colors_wh$generosity
   ) %>%
+  add_trace(
+      y = ~ trust,
+      hovertemplate  = '%{x} : %{y}',
+      name = 'Trust',
+      fillcolor = colors_wh$trust
+    ) %>%
   add_trace(
     y = ~ dystopia,
     hovertemplate  = '%{x} : %{y}',
@@ -57,4 +57,5 @@ data %>%
                   r = 150)
   )
 }
+
 

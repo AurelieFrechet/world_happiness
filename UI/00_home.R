@@ -4,7 +4,7 @@ body_content[[length(body_content) + 1]] <-
     h1("Welcome to World Happiness Shinyapp"),
     br(),
     column(
-      width = 3,
+      width = 4,
       p(
         "The app allows you to observe and compare the happiness
             score indicators by region or countries and from 2015 to 2019"
@@ -49,7 +49,7 @@ body_content[[length(body_content) + 1]] <-
       )
       
     ),
-    column(width = 9,
+    column(width = 8,
            plotlyOutput("home_map")
     )
     

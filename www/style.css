@@ -1,32 +1,218 @@
-/*
-  $color-economy    : #A9FF96;
-  $color-family     : #FFBC75;
-  $color-health     : #999EFF;
-  $color-freedom    : #FF7599;
-  $color-trust      : #FDEC6D;
-  $color-generosity : #95CEFF;
-  $color-dystopia   : #5C5C61;
-  */
 
-/* colors */
+body {
+    font-family: "Gotham A","Gotham B",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 1.5rem;
+    background-color: #ffffff;
+}
+
+
+.content{
+  background-color: #ffffff;
+  color:#94378e;
+}
+.content-wrapper{
+   background-color: #ffffff;
+}
+
+.bg-maroon { 
+  background-color: #94378e !important; 
+  color: #ffffff !important; }
+
+
+
+.btn-default {
+    background-color: #fff;
+    color: #444;
+    border-color: #ddd;
+}
+
+.btn-default.active {
+    color: #333;
+    background-color: #fff;
+    background-image: none;
+    border-color: #fff;
+}
+
+.irs-bar {
+    height: 8px;
+    top: 25px;
+    border-top: 1px solid #94378e;
+    border-bottom: 1px solid #94378e;
+    background: #94378e;
+}
+
+.irs-bar-edge {
+    height: 8px;
+    top: 25px;
+    width: 14px;
+    border: 1px solid #94378e;
+        border-right-color: rgb(66, 139, 202);
+        border-right-style: solid;
+        border-right-width: 1px;
+    border-right: 0;
+    background: #94378e;
+    border-radius: 16px 0 0 16px;
+    -moz-border-radius: 16px 0 0 16px;
+}
+
+.irs-from, .irs-to, .irs-single {
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.333;
+    text-shadow: none;
+    padding: 1px 3px;
+    background: #94378e;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #93358c;
+    outline: 0;
+}
+
+.bootstrap-select > .dropdown-toggle {
+    text-align: right;
+    white-space: nowrap;
+    color: #93358c;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.sidebar {
+    height: 90vh;
+    overflow-y: auto;
+    margin-top: 150px;
+}
+.skin-black .main-header .navbar {
+     background-color:#93358c 
+}
+
+
+
+ .main-header .logo {
+     font-family:"Gotham A","Gotham B",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+     font-weight:bold;
+     letter-spacing:-1px; 
+     font-size:30px; 
+     color:#ffffff;
+}
+ .modal-dialog{
+     max-width:1000px;
+     border-radius: 5px;
+     border: 2px solid white; 
+}
+ .modal-body{
+     max-height:700px;
+     align-content:center;
+     border: 2px solid white;
+     border-radius: 5px;
+}
+ .modal-sm {
+     max-width:1200px; 
+     align-content:center;
+     border-radius: 5px;
+     border: 2px solid white;
+}
+ .sidebar {
+     height:90vh;
+     overflow-y:auto 
+}
+.skin-black .main-header .navbar .sidebar-toggle {
+    color: #fff;
+    background: #93358c;
+}
+.skin-black .main-header .navbar .sidebar-toggle:hover {
+    color: #93358c;
+    background: #fff;
+}
+ .skin-black .main-header > .logo {
+     background-color:#93358c;
+     color:#ffffff;
+     border-bottom:0 solid transparent;
+     border-right:1px solid #93358c;
+}
+ .skin-black .main-header > .logo:hover {
+     background-color:#93358c 
+}
+ .nav-tabs-custom > .nav-tabs > li.active {
+     border-top-color:#616365 
+}
+ .nav-tabs-custom {
+     box-shadow:5px 5px 5px lightgrey 
+}
+ .skin-black .left-side, .skin-black .main-sidebar, .skin-black .wrapper {
+     background-color:#93358c;
+}
+.skin-black .sidebar-menu > li.active > a, .skin-black .sidebar-menu > li:hover > a {
+    color: #93358c;
+    background: #fff;
+    border-left-color: #93358c;
+}
+ .skin-black .sidebar-menu > li > .treeview-menu {
+     margin:0 1px; 
+     background:#8a8c8f;
+     box-shadow:inset 0px 0px 7px #000000;
+     padding-bottom:2px 
+}
+ .skin-black .sidebar a {
+     color:#ffffff 
+}
+.navbar-nav > .messages-menu > .dropdown-menu, .navbar-nav > .notifications-menu > .dropdown-menu, .navbar-nav > .tasks-menu > .dropdown-menu {
+    width: 400px;
+    padding: 0;
+    margin: 10px;
+    top: 100%;
+    background-color: #fefefee6;
+    box-shadow: 10px 10px 10px darkgrey;
+}
+.navbar-nav > .messages-menu > .dropdown-menu > li.header, .navbar-nav > .notifications-menu > .dropdown-menu > li.header, .navbar-nav > .tasks-menu > .dropdown-menu > li.header {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #93358c;
+    padding: 7px 10px;
+    border-bottom: 1px solid #93358ce6;
+    color: #ffffff;
+    font-size: 14px;
+}
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu, .navbar-nav > .notifications-menu > .dropdown-menu > li .menu, .navbar-nav > .tasks-menu > .dropdown-menu > li .menu {
+    max-height: 1200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: hidden;
+}
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
+    color: #000000;
+    overflow: hidden;
+    white-space: normal;
+}
 
 .color-economy{
-  background-color: #A9FF96;
+  background-color: #94378e;
+  color: #ffffff;
 }
 .color-family{
-  background-color: #FFBC75;
+  background-color: #e80a8c;
+  color: #ffffff;
 }
 .color-health{
-  background-color: #999EFF;
+  background-color: #f26433;
+  color: #ffffff;
 }
 .color-freedom{
-  background-color: #FF7599;
+  background-color: #d7e023;
+  color: #ffffff;
 }
 .color-trust{
-  background-color: #FDEC6D;
+  background-color: #828dc5;
+  color: #ffffff;
 }
 .color-generosity{
-  background-color: #95CEFF;
+  background-color: #66c7d1;
+  color: #ffffff;
 }
-
-

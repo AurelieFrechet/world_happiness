@@ -28,18 +28,18 @@ output$region_lines <-
 output$region_1st_rank <- renderValueBox({
   valueBox(
     value = min(sub_data()$rank), 
-    subtitle = "1st Rank", 
+    subtitle = paste("1st Rank", current$country, sep = " : "), 
     icon = icon("medal"),
-    color = "yellow"
+    color = "maroon"
   )
 })
 
 output$region_1st_score <- renderValueBox({
   valueBox(
     value = round(max(sub_data()$score), 3), 
-    subtitle = "1st Score", 
+    subtitle = paste("1st Score", current$country, sep = " : "), 
     icon = icon("star"),
-    color = "yellow"
+    color = "maroon"
   )
 })
 
@@ -48,6 +48,6 @@ output$region_mean_score <- renderValueBox({
     value = round(mean(sub_data()$score), 3), 
     subtitle = "Mean Score", 
     icon = icon("star-half-alt"),
-    color = "yellow"
+    color = "maroon"
   )
 })

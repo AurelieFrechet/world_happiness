@@ -31,15 +31,15 @@ switchbuttons_indicator <- function(inputId){
                 </button>
             </div>
             <div class='btn-group btn-group-toggle' role='group'>
-                <button class='btn radiobtn btn-default color-trust'>
-                    <input type='radio' autocomplete='off' name='compare_indicators' value='trust'>
-                    <i class='fa fa-handshake'></i>
-                </button>
-            </div>
-            <div class='btn-group btn-group-toggle' role='group'>
                 <button class='btn radiobtn btn-default color-generosity'>
                     <input type='radio' autocomplete='off' name='compare_indicators' value='generosity'>
                     <i class='fa fa-hand-holding-heart'></i>
+                </button>
+            </div>
+            <div class='btn-group btn-group-toggle' role='group'>
+                <button class='btn radiobtn btn-default color-trust'>
+                    <input type='radio' autocomplete='off' name='compare_indicators' value='trust'>
+                    <i class='fa fa-handshake'></i>
                 </button>
             </div>
         </div>

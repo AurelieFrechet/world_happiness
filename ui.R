@@ -12,7 +12,8 @@ for(f in file.path(getwd(), "UI", files_UI)){
 
 
 # Header ------------------------------------------------------------------
-header <- dashboardHeader(title = "World Happiness")
+header <- dashboardHeader(title = "World Happiness",
+                          titleWidth = 450)
 
 
 # Sidebar -----------------------------------------------------------------
@@ -29,7 +30,9 @@ body <- dashboardBody(
 )
 
 # Page --------------------------------------------------------------------
-dashboardPage(header, side, body)
+dashboardPage(skin = "black",
+              title = "World Happiness",
+              header, side, body)
 
 
 

@@ -5,7 +5,10 @@ lines_wh <- function(data, indicator) {
     mode = 'lines+markers',
     x = ~ year,
     y = ~ {indicator},
-    color = ~ country
+    color = ~ country,
+    marker = list(color = 'rgb(148, 55, 142)'),
+    line = list(color = 'rgb(148, 55, 142)')
+    
   ) %>%
   add_lines() %>%
   add_annotations(
@@ -32,4 +35,7 @@ lines_wh <- function(data, indicator) {
     showlegend = FALSE
   )")
  eval(parse(text = cmd))
-  }
+}
+
+
+lines_wh(data = filter(wh_data, region == "Southern Asia"), "score")

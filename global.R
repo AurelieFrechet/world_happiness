@@ -45,11 +45,11 @@ names(countries_list) <- regions
 # 2 - Couleurs ------------------------------------------------------------
 
 colors_wh <- list(
-  economy    = "#A9FF96",
-  family     = "#FFBC75",
-  health     = "#999EFF",
-  freedom    = "#FF7599",
-  trust      = "#FDEC6D",
-  generosity = "#95CEFF",
-  dystopia   = "#5C5C61"
+  economy    = "#94378e",
+  family     = "#e80a8c",
+  health     = "#f26433",
+  freedom    = "#d7e023",
+  trust      = "#828dc5",
+  generosity = "#66c7d1",
+  dystopia   = "#ba9bc9"
 )

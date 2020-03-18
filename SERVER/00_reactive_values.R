@@ -33,8 +33,10 @@ observeEvent(input$home_indicators,
              current$indicator <- input$home_indicators)
 
 # Region Page
-observeEvent(input$region_select,
-             current$region <- input$region_select)
+observeEvent(input$region_select,{
+             current$region <- input$region_select
+             
+             current$country <- filter(current$data, score == max(sub_data()$score)) })
 
 observeEvent(input$region_years,
              current$year <- input$region_years)
@@ -43,8 +45,11 @@ observeEvent(input$region_indicators,
              current$indicator <- input$region_indicators)
 
 # Country page
-observeEvent(input$country_select,
-             current$country <- input$country_select)
+observeEvent(input$country_select,{
+             current$country <- input$country_select
+             
+             current$region <- unique(filter(current$data, country == current$country)$region)
+             })
 
 # Compare page
 observeEvent(input$compare_select,
@@ -58,6 +63,26 @@ observeEvent(input$compare_indicators,
 
 
 # Update inputs -----------------------------------------------------------
+
+# Region
+observeEvent(current$region,{
+  # Home page           
+  updatePickerInput(
+    session = session,
+    inputId = "region_select",
+    selected = current$region
+  )
+})
+
+# Country
+observeEvent(current$country,{
+  # Home page           
+  updatePickerInput(
+    session = session,
+    inputId = "country_select",
+    selected = current$country
+  )
+})
 
 # Year
 observeEvent(current$year,{
