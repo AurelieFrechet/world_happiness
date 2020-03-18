@@ -2,11 +2,12 @@
 
 sub_data_country <- reactive({
   validate(need(input$country_select != "", "Pick a country"))
-  filter(current$data, country == current$country)
+  dplyr::filter(current$data, country == current$country)
 })
 
 sub_data_region <- reactive({
-  filter(current$data, region == current$region)
+  validate(need(input$country_select != "", "Pick a country"))
+  dplyr::filter(current$data, region == current$region)
 })
 
 best_year <- reactive({

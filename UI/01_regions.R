@@ -15,7 +15,7 @@ body_content[[length(body_content) + 1]] <-
           ),
           br(),
           column(width = 6,
-                 h3("Composition of score order by indicator"),
+                 h2("Composition of score order by rank"),
                  plotlyOutput("region_stakedbar",
                               height = "400px"),
                  sliderTextInput(
@@ -25,7 +25,7 @@ body_content[[length(body_content) + 1]] <-
                    width = "100%"
                  )),
           column(width = 6,
-                 h3("Evolution of indicator by year"),
+                 htmlOutput("region_lines_title"),
                  plotlyOutput("region_lines"),
                  switchbuttons_indicator(
                    inputId = "region_indicators")

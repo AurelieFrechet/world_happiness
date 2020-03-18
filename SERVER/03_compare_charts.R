@@ -2,7 +2,7 @@
 
 compare_filter <- reactive({
   validate(need(input$compare_select != "", "Choose countries"))
-  filter(current$data, country %in% current$compare)
+  dplyr::filter(current$data, country %in% current$compare)
 })
 
 output$compare_stakedbar <- 
@@ -18,4 +18,9 @@ output$compare_lines <-
   })
 
 
+# Titles ------------------------------------------------------------------
 
+output$compare_lines_title <-
+  renderUI({HTML(paste(
+    "<h2>Evolution of", current$indicator, "by year</h2>"
+  ))})

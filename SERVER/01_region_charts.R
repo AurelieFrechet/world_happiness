@@ -4,7 +4,7 @@
 
 sub_data <- reactive({
   validate(need(input$region_select != "", "Pick a region"))
-  filter(current$data, region == current$region)
+  dplyr::filter(current$data, region == current$region)
 })
 
 
@@ -28,7 +28,7 @@ output$region_lines <-
 output$region_1st_rank <- renderValueBox({
   valueBox(
     value = min(sub_data()$rank), 
-    subtitle = paste("1st Rank", current$country, sep = " : "), 
+    subtitle = paste("1st Rank", current$best_country, sep = " : "), 
     icon = icon("medal"),
     color = "maroon"
   )
@@ -37,7 +37,7 @@ output$region_1st_rank <- renderValueBox({
 output$region_1st_score <- renderValueBox({
   valueBox(
     value = round(max(sub_data()$score), 3), 
-    subtitle = paste("1st Score", current$country, sep = " : "), 
+    subtitle = paste("1st Score", current$best_country, sep = " : "), 
     icon = icon("star"),
     color = "maroon"
   )
@@ -51,3 +51,12 @@ output$region_mean_score <- renderValueBox({
     color = "maroon"
   )
 })
+
+
+# Titles ------------------------------------------------------------------
+
+output$region_lines_title <-
+  renderUI({HTML(paste(
+    "<h2>Evolution of", current$indicator, "by year</h2>"
+  ))})
+

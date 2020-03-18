@@ -17,6 +17,7 @@ current$region <- ""
 
 # Current country
 current$country <- ""
+current$best_country <- ""
 
 # Current compare
 current$compare <- ""
@@ -33,10 +34,6 @@ observeEvent(input$home_indicators,
              current$indicator <- input$home_indicators)
 
 # Region Page
-observeEvent(input$region_select,{
-             current$region <- input$region_select
-             
-             current$country <- filter(current$data, score == max(sub_data()$score)) })
 
 observeEvent(input$region_years,
              current$year <- input$region_years)
@@ -45,11 +42,6 @@ observeEvent(input$region_indicators,
              current$indicator <- input$region_indicators)
 
 # Country page
-observeEvent(input$country_select,{
-             current$country <- input$country_select
-             
-             current$region <- unique(filter(current$data, country == current$country)$region)
-             })
 
 # Compare page
 observeEvent(input$compare_select,
@@ -65,22 +57,27 @@ observeEvent(input$compare_indicators,
 # Update inputs -----------------------------------------------------------
 
 # Region
-observeEvent(current$region,{
-  # Home page           
+observeEvent(input$region_select,{
+  current$region <- input$region_select
+  current$best_country <- dplyr::filter(sub_data(), score == max(sub_data()$score))$country
+  
+  updatePickerInput(
+    session = session,
+    inputId = "country_select",
+    selected = current$best_country
+  )
+  
+
+})
+
+# Country
+observeEvent(input$country_select,{
+  current$country <- input$country_select
+  current$region <- unique(dplyr::filter(current$data, country == current$country)$region)
   updatePickerInput(
     session = session,
     inputId = "region_select",
     selected = current$region
-  )
-})
-
-# Country
-observeEvent(current$country,{
-  # Home page           
-  updatePickerInput(
-    session = session,
-    inputId = "country_select",
-    selected = current$country
   )
 })
 
@@ -108,7 +105,7 @@ observeEvent(current$year,{
 
 # Indicator
 
-observeEvent(current$year,{
+observeEvent(current$indicator,{
   # Home page           
   updateRadioGroupButtons(
     session = session,

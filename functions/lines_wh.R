@@ -37,5 +37,3 @@ lines_wh <- function(data, indicator) {
  eval(parse(text = cmd))
 }
 
-
-lines_wh(data = filter(wh_data, region == "Southern Asia"), "score")
