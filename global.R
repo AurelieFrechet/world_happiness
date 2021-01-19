@@ -23,7 +23,7 @@ for(f in file.path(getwd(), "functions", files_functions)){
 
 wh_data <- readRDS("data/wh_data.RDS")
 
-
+#modification
 
 # 3 - Parametres ----------------------------------------------------------
 # Years for slider
